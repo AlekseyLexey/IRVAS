@@ -35,7 +35,6 @@ const changeUserState = (state) => {
 						break;
 				}
 				console.log(state);
-				// console.log(Object.keys(state).length);
 			});
 		});
 	}

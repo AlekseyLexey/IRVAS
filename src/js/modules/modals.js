@@ -1,4 +1,4 @@
-const modals = () => {
+const modals = (state) => {
 
 	function bindModal(triggerSelector, modalSelector, closeSelector, dataWindow = true) {
 		const trigger			= document.querySelectorAll(triggerSelector),
@@ -22,10 +22,25 @@ const modals = () => {
 			});
 		}
 
+		function removeClick(item) {
+			item.removeEventListener();
+		}
+		
 		trigger.forEach(item => {
 			item.addEventListener('click', (e) => {
 				if (e.target) {
 					e.preventDefault();
+				}
+				if (item.classList.contains('popup_calc_button')) {
+					if (Object.keys(state).length < 3) {
+						removeClick(item);
+					}
+				}
+
+				if (item.classList.contains('popup_calc_profile_button')) {
+					if (Object.keys(state).length < 5) {
+						removeClick(item);
+					}
 				}
 				closeAllWindows();
 				openModal(modals);
