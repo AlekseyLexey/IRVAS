@@ -1,10 +1,14 @@
-const form = () => {
+import validationModule from "./validationModule";
+
+const form = (state) => {
 	const forms									= document.querySelectorAll('form');
 
+	validationModule('[name="user_phone"]');
+
 	let message = {
-		loading: 'Loading...',
-		sucsess: 'Done',
-		failure: 'Ohhh... We are fuck'
+		loading: 'Загрузка...',
+		success: 'Спасибо! Скоро мы с вами свяжемся',
+		failure: 'Что-то пошло не так...'
 	}
 
 	forms.forEach(item => {
@@ -30,6 +34,11 @@ const form = () => {
 			form.append(statusMessage);
 
 			const formData						= new FormData(form);
+			if (form.getAttribute('data-calc') === "end") {
+				for (let key in state) {
+					formData.append(key, state[key])
+				}
+			}
 
 			processingPostData('assets/server.php', formData)
 				.then(data => {

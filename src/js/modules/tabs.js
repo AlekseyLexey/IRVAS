@@ -19,7 +19,6 @@ const tabs = (tabSelector, tabsParentSelector, tabsContentSelectoor, activeSelec
 
 	tabsParent.addEventListener('click', (e) => {
 		const target = e.target;
-		console.log(target);
 		if (target && (target.classList.contains(tabSelector.replace(/\./, '')) || target.parentNode.classList.contains(tabSelector.replace(/\./, '')))) {
 			tabs.forEach((item, i) => {
 				if (target === item || target.parentNode === item) {
