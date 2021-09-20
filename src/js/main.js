@@ -4,6 +4,7 @@ import tabs from './modules/tabs';
 import form from './modules/form';
 import changeUserState from './modules/changeUserState';
 import timer from './modules/timer';
+import images from './modules/images';
 
 window.addEventListener('DOMContentLoaded', () => {
 	"use strict";
@@ -17,4 +18,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	tabs('.balcon_icons_img', '.balcon_icons', '.big_img > img', 'do_image_more', 'inline-block');
 	form(userState);
 	timer('#timer' ,'2021-12-31');
+	images();
 });
