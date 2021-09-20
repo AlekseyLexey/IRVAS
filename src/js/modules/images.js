@@ -7,7 +7,7 @@ const images = () => {
 	imagesBlock.classList.add('popup');
 	imagesParent.appendChild(imagesBlock);
 	imagesBlock.appendChild(imageWindow);
-	imageWindow.style.cssText = `
+	imagesBlock.style.cssText = `
 		justify-content: center;
 		align-items: center;
 	`;
@@ -20,11 +20,10 @@ const images = () => {
 		if (target && target.classList.contains('preview')) {
 			imagesBlock.style.display = 'flex';
 			const attributeETarget = target.parentNode.getAttribute('href');
-			target.setAttribute('src', attributeETarget);
-
-			if (target.classList.contains(popup)) {
-				imagesBlock.style.display = 'none';
-			}
+			imageWindow.setAttribute('src', attributeETarget);
+		}
+		if (target && target.matches('div.popup')) {
+			imagesBlock.style.display = 'none';
 		}
 	})
 

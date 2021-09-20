@@ -18062,7 +18062,7 @@ var images = function images() {
   imagesBlock.classList.add('popup');
   imagesParent.appendChild(imagesBlock);
   imagesBlock.appendChild(imageWindow);
-  imageWindow.style.cssText = "\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t";
+  imagesBlock.style.cssText = "\n\t\tjustify-content: center;\n\t\talign-items: center;\n\t";
   imagesBlock.style.display = 'none';
   imagesParent.addEventListener('click', function (e) {
     e.preventDefault();
@@ -18071,11 +18071,11 @@ var images = function images() {
     if (target && target.classList.contains('preview')) {
       imagesBlock.style.display = 'flex';
       var attributeETarget = target.parentNode.getAttribute('href');
-      target.setAttribute('src', attributeETarget);
+      imageWindow.setAttribute('src', attributeETarget);
+    }
 
-      if (target.classList.contains(popup)) {
-        imagesBlock.style.display = 'none';
-      }
+    if (target && target.matches('div.popup')) {
+      imagesBlock.style.display = 'none';
     }
   });
 };
