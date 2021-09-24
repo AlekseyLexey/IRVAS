@@ -27,7 +27,7 @@ const tabs = (tabSelector, tabsParentSelector, tabsContentSelectoor, activeSelec
 				}
 			});
 		}
-	})
-}
+	});
+};
 
 export default tabs;

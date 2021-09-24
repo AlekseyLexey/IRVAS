@@ -4,9 +4,9 @@ const validationModule = (selector) => {
 	itemValidation.forEach((item) => {
 		item.addEventListener('input', () => {
 			item.value = item.value.replace(/\D/, '');
-		})
+		});
 	});
 	
-}
+};
 
 export default validationModule;

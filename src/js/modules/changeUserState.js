@@ -44,6 +44,6 @@ const changeUserState = (state) => {
 	addUserState(windowHeight, 'input', 'height');
 	addUserState(windowType, 'change', 'type');
 	addUserState(windowSeason, 'change', 'season');
-}
+};
 
 export default changeUserState;

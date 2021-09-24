@@ -25,9 +25,9 @@ const images = () => {
 		if (target && target.matches('div.popup')) {
 			imagesBlock.style.display = 'none';
 		}
-	})
+	});
 
 
-}
+};
 
 export default images;

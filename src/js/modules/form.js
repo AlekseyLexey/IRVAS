@@ -9,20 +9,20 @@ const form = (state) => {
 		loading: 'Загрузка...',
 		success: 'Спасибо! Скоро мы с вами свяжемся',
 		failure: 'Что-то пошло не так...'
-	}
+	};
 
 	forms.forEach(item => {
-		postData(item)
+		postData(item);
 	});
 
 	const processingPostData = async (url, data) => {
 		let res = await fetch(url, {
 			method: "POST",
 			body: data
-		})
+		});
 
 		return await res.text();
-	}
+	};
 
 	function postData(form) {
 		form.addEventListener('submit', (e) => {
@@ -36,7 +36,7 @@ const form = (state) => {
 			const formData						= new FormData(form);
 			if (form.getAttribute('data-calc') === "end") {
 				for (let key in state) {
-					formData.append(key, state[key])
+					formData.append(key, state[key]);
 				}
 			}
 
@@ -47,13 +47,13 @@ const form = (state) => {
 				})
 				.catch(() => statusMessage.textContent = message.failure)
 				.finally(() => {
-				form.reset()
+				form.reset();
 				setTimeout(() => {
 					statusMessage.remove();
-				}, 5000)
-			})
-		})
+				}, 5000);
+			});
+		});
 	}
-}
+};
 
 export default form;

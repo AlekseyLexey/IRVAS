@@ -14,7 +14,7 @@ const timer = (id ,deadLine) => {
 			'hours': hours,
 			'minutes': minutes,
 			'seconds': seconds
-		}
+		};
 	};
 
 	function setTimeRemaning (selector, lastDay) {
@@ -47,9 +47,9 @@ const timer = (id ,deadLine) => {
 				seconds.innerHTML	= setZeroInTimer(timer.seconds);
 			}
 		}
-	};
+	}
 
 	setTimeRemaning(id, deadLine);
-}
+};
 
 export default timer;
