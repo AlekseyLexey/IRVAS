@@ -43,7 +43,7 @@ const form = (state) => {
 			processingPostData('assets/server.php', formData)
 				.then(data => {
 					console.log(data);
-					statusMessage.textContent = message.sucsess;
+					statusMessage.textContent = message.success;
 				})
 				.catch(() => statusMessage.textContent = message.failure)
 				.finally(() => {
